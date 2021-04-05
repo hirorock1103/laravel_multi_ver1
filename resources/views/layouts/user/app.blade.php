@@ -39,7 +39,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
+                        @unless (Auth::guard('user')->check())
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.login') }}">{{ __('Login') }}</a>
                             </li>
